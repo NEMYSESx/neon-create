@@ -2,7 +2,6 @@ import { createEnvFile, executeCommand } from "../../../../bin/helper.js";
 import path from "path";
 import fs from "fs";
 
-// Define paths to the configuration files
 const envFilePath = path.join(process.cwd(), ".env");
 const configDirPath = path.join(process.cwd(), "config");
 const configFilePath = path.join(configDirPath, "config.js");
@@ -12,20 +11,16 @@ async function setupSequelize() {
   console.log("Setting up NeonDB with Sequelize...");
 
   try {
-    // Install necessary packages
     executeCommand("npm install sequelize pg pg-hstore");
     executeCommand("npm install sequelize-cli --save-dev");
 
-    // Create .env file with DATABASE_URL
     const neonConnectionString =
       "postgresql://[user]:[password]@[neon_hostname]/[dbname]?sslmode=require";
     const envContent = `DATABASE_URL="${neonConnectionString}"\n`;
     createEnvFile(envContent);
 
-    // Initialize Sequelize configuration
     executeCommand("npx sequelize init");
 
-    // Create config.js file if it doesn't exist
     if (!fs.existsSync(configFilePath)) {
       const configContent = `
 const dotenv = require('dotenv');
@@ -45,7 +40,6 @@ module.exports = {
       console.log("Sequelize config file already exists.");
     }
 
-    // Create .sequelizerc file if it doesn't exist
     if (!fs.existsSync(sequelizercFilePath)) {
       const sequelizercContent = `
 const path = require('path');

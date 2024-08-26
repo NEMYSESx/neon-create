@@ -1,4 +1,3 @@
-// rails.js
 import { createEnvFile, executeCommand } from "../../../bin/helper.js";
 
 export default async function setupRails() {

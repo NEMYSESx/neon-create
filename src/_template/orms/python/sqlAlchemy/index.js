@@ -2,28 +2,23 @@ import { createEnvFile, executeCommand } from "../../../../bin/helper.js";
 import path from "path";
 import fs from "fs";
 
-// Define the paths to the .env file and SQLAlchemy configuration
 const envFilePath = path.join(process.cwd(), ".env");
 const sqlalchemyConfigFilePath = path.join(
   process.cwd(),
   "sqlalchemy_config.py"
 );
 
-// Update SQLAlchemy configuration for NeonDB
 async function setupSqlAlchemy() {
   console.log("Setting up NeonDB with SQLAlchemy...");
 
   try {
-    // Install psycopg2-binary for PostgreSQL support
     executeCommand("pip install psycopg2-binary");
 
-    // Create .env file with DATABASE_URL
     const neonConnectionString =
       "postgresql://[user]:[password]@[neon_hostname]/[dbname]";
     const envContent = `DATABASE_URL="${neonConnectionString}"\n`;
     createEnvFile(envContent);
 
-    // Create or update SQLAlchemy configuration
     const sqlalchemyConfigContent = `
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -49,10 +44,8 @@ def get_db():
         db.close()
     `.trim();
 
-    // Ensure the project directory exists
     fs.mkdirSync(path.dirname(sqlalchemyConfigFilePath), { recursive: true });
 
-    // Write the SQLAlchemy configuration to the file
     fs.writeFileSync(sqlalchemyConfigFilePath, sqlalchemyConfigContent, {
       encoding: "utf8",
     });

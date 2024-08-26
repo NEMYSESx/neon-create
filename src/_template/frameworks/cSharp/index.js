@@ -5,7 +5,6 @@ export default async function cSharp() {
   console.log("Setting up NeonDB with Entity Framework...");
 
   try {
-    // Install necessary NuGet packages
     console.log("Installing NuGet packages...");
     executeCommand("dotnet add package Microsoft.EntityFrameworkCore");
     executeCommand("dotnet add package Microsoft.EntityFrameworkCore.Design");
@@ -14,12 +13,10 @@ export default async function cSharp() {
     executeCommand("dotnet add package dotenv.net");
     console.log("NuGet packages installed successfully.");
 
-    // Install the dotnet-ef tool globally
     console.log("Installing dotnet-ef tool globally...");
     executeCommand("dotnet tool install --global dotnet-ef");
     console.log("dotnet-ef tool installed successfully.");
 
-    // Create a .env file with a placeholder for the Neon Postgres connection string
     const envContent = `
 DATABASE_URL=NEON_POSTGRES_CONNECTION_STRING
     `.trim();

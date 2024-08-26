@@ -1,4 +1,3 @@
-// node.js
 import { createEnvFile, executeCommand } from "../../../bin/helper.js";
 
 export default async function setupNodeJS(framework) {

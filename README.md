@@ -16,7 +16,7 @@
 You can use `neon-create` with `npx` without needing to install it:
 
 ```bash
-npx neon-create
+npx neon-create ```
 
 
 

@@ -1,0 +1,22 @@
+{
+  "name": "neon-create",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node src/index"
+  },
+  "bin": {
+    "neon-create": "./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "CLI tool to integrate NeonDB with various frameworks",
+  "dependencies": {
+    "@neondatabase/serverless": "^0.9.4",
+    "dotenv": "^16.4.5",
+    "inquirer": "^10.1.8"
+  }
+}

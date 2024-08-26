@@ -12,10 +12,10 @@
 ## Installation
 
 You can use `neon-create` with `npx` without needing to install it:
-
+`npx neon-create`
 
 If you prefer to install it globally, run:
-
+`npm install -g neon-create`
 
 ## Usage
 

@@ -6,8 +6,6 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Configuration](#configuration)
-- [Commands](#commands)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -15,46 +13,30 @@
 
 You can use `neon-create` with `npx` without needing to install it:
 
-```bash
-npx neon-create ```
+
+If you prefer to install it globally, run:
 
 
+## Usage
+
+To integrate Postgres on Neon into your project, execute:
 
 
+The tool will guide you through the setup process, including configuration and optional schema initialization.
 
+## Contributing
 
+We welcome contributions to `neon-create`! To contribute:
 
+1. **Fork the Repository**: Create a fork of the repository on GitHub.
+2. **Clone the Repository**: Clone your fork to your local machine:
+3. **Create a Branch**: Create a new branch for your changes:
+4. **Make Changes**: Implement your changes or new features.
+5. **Test Your Changes**: Ensure that everything works as expected.
+6. **Commit Your Changes**: Commit your changes with a clear message:
+7. **Push Your Changes**: Push your branch to your forked repository:
+8. **Create a Pull Request**: Open a pull request on the original repository to merge your changes.
 
+## License
 
-
-
-
-
-
-
-
-Contributing
-We welcome contributions to neon-create! To contribute:
-
-Fork the Repository: Create a fork of the repository on GitHub.
-Clone the Repository: Clone your fork to your local machine:
-```bash
-git clone https://github.com/your-username/neon-create.git
-
-Create a Branch: Create a new branch for your changes:
-```bash
-git checkout -b feature/my-new-feature
-
-Make Changes: Implement your changes or new features.
-Test Your Changes: Ensure that everything works as expected.
-Commit Your Changes: Commit your changes with a clear message
-```bash
-git commit -m "Add new feature X"
-
-Push Your Changes: Push your branch to your forked repository
-```bash
-git push origin feature/my-new-feature
-
-Create a Pull Request: Open a pull request on the original repository to merge your changes.
-
-neon-create is licensed under the MIT License. See the LICENSE file for details.
+`neon-create` is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the `LICENSE` file for details.
